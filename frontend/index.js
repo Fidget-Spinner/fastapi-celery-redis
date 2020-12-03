@@ -27,6 +27,7 @@
         let task_id = (await res.json())?.task_id;
         output.innerText = task_id;
         const timer = setInterval(async function(){
+            // polls the server
             let state = await poll(task_id);
             output.innerText = task_id;
             console.log(state);
@@ -36,7 +37,5 @@
         }, 2000);
         
     });
-    // polls the server
-
 
 })();
